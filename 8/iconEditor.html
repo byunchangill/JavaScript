@@ -12,7 +12,7 @@
             var node = document.createElement(name);
             if(attr) {
                 for(var item in attr) { // 객체 일때는 맴버필드명, 배열일때는 값을 준다.
-                    if(node.hasOwnProperty(item)) {
+                    if(attr.hasOwnProperty(item)) {
                         node.setAttribute(item, attr[item]);
                     }
                 }
@@ -25,6 +25,11 @@
             var color = elt('input', {type: 'color'});
             // 모두 삭제 버튼.
             var clear = elt('input', {type: 'button', value: '모두 삭제'});
+            clear.addEventListener('click', function() {
+                cells.forEach(function(item) {
+                    item.style.backgroundColor = '';
+                });
+            });
 
             var table = elt('table');
             table.style.borderCollapse = 'collapse';
