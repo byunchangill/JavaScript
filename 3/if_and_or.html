@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 자바스트립트에서 true, false 를 사용 할 수 있는 값들을 알려줄 수 이쓴ㄴ 예제
+        // and, or 차이점 (모든 프로그래밍 언어 동일)
+        // false : 0, '', undefined, null.
+        // true : false 반대.
+        // and(&&) 는 false 가 될 가능성이 높은 조건식을 앞쪽에 배치.
+        // or(||) 는 ture 가 될 가능성이 높은 조건식을 앞쪽에 배지.
+        function ck1() {
+            console.log('--ck1 called--');
+            return 1;
+        }
+
+        function ck2() {
+            console.log('--ck2 called--');
+            return '';
+        }
+
+        function ck3() {
+            console.log('--ck3 called--');
+        }
+
+        if(ck1() || ck2() && ck3()) {
+            console.log('Wow1');
+        }
+
+        if(ck2() && ck1()) {
+            console.log('Wow2');
+        }
+
+        var arr = [];
+        if (arr) {
+            console.log('ddd');
+        }
+    </script>
+</body>
+</html>

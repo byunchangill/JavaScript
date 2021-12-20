@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            var arr = {
+            '0' : 2,
+            '1' : 6,
+            '2' : 10,
+            '3' : 11,
+            '4' : 22,
+            '5' : 1,
+            '6' : 7,
+            'length' : 7,
+            'filter' : function(fn) {
+                var temp = [];
+                for (var i = 0; i < this.length; i++) {
+                    if(fn(this[i])) {
+                        temp.push(this[i]);
+                    }
+                }
+                return temp;
+            }
+        };
+        var arr2 = arr.filter(function(v) {
+            return v % 2;
+        });
+        console.log(arr2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cards">
+        &hearts; 하트는 <em>승려</em> 라는 똣입니다.
+    </div>
+    <script>
+        var cardsElem = document.querySelector('#cards');
+        var str = '&diams; 다이아는 <strong>상인</strong> 이라는 뜻 입니다.';
+        // innerHTML 은 기존의 값을 덮어씌운다. html 문법 가능.
+        // innerText 는 글 그대로 출력.
+        // cardsElem.innerHTML = str;       
+        // cardsElem.innerText = str;
+        
+        // cardsElem.append(str);
+        // cardsElem.appendChild(str);
+        // cardsElem.prepend(str);
+    </script>
+</body>
+</html>

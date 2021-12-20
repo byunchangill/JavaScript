@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function elt(name, attr) {
+            var node = document.createElement(name);
+            if(attr) {
+                for(var item in attr) { // 객체 일때는 맴버필드명, 배열일때는 값을 준다.
+                    if(node.hasOwnProperty(item)) {
+                        node.setAttribute(item, attr[item]);
+                    }
+                }
+            }
+            return node;
+        }
+
+        function createIconEditor(parent, nx, ny) {
+            // color 선택.
+            var color = elt('input', {type: 'color'});
+            // 모두 삭제 버튼.
+            var clear = elt('input', {type: 'button', value: '모두 삭제'});
+
+            var table = elt('table');
+            table.style.borderCollapse = 'collapse';
+            table.style.marginTop = '5px';
+
+            var cells = [];
+            for(var r = 0; r < ny; r++) {
+                var tr = elt('tr');
+                table.appendChild(tr);
+
+                for(var c = 0; c < nx; c++) {
+                    var td = elt('td');
+                    cells.push(td);
+                    tr.appendChild(td);
+                    td.style.width = td.style.height = '15px';
+                    td.style.border = '1px solid gray';
+                    td.addEventListener('click', function(e) {
+                        if(e.target.style.backgroundColor === '') {
+                            e.target.style.backgroundColor = color.value;
+                        } else {
+                            e.target.style.backgroundColor = '';
+                        }                      
+                    });
+                }
+            }
+
+            parent.appendChild(color);
+            parent.appendChild(clear);
+            parent.appendChild(table);
+        }
+
+        createIconEditor(document.body, 16, 16);
+    </script>
+</body>
+</html>

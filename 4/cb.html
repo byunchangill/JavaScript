@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calc(cb, n1, n2) {
+            return cb(n1, n2);
+        }
+
+        function fnSum(n1, n2) { return n1 + n2; }
+        function fnMulti(n1, n2) { return n1 * n2; }
+
+        var result = calc(fnSum, 10, 20);
+        console.log('result : ' + result);
+
+        var result2 = calc(fnMulti, 10, 20);
+        console.log('result2 : ' + result2);
+
+    </script>
+</body>
+</html>

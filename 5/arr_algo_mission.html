@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('arr_algo_mission');
+        var arr = {
+            '0' : 2,
+            '1' : 6,
+            '2' : 10,
+            '3' : 11,
+            '4' : 22,
+            '5' : 1,
+            '6' : 7,
+            'length' : 7,
+            'forEach' : function(fn) {
+                for (var i = 0; i < this.length; i++) {
+                    fn(this[i]);
+                }
+            }
+        };
+
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);     
+        }
+        
+        var sum2 = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum2 += arr[i];       
+        }
+        console.log('sum2 :' + sum2);
+
+        console.log('----------------------');
+
+        var sum = 0;
+        /*
+        function aa(val) {
+            sum += val;
+        }
+        arr.forEach(aa);
+        */
+        arr.forEach(function(val){
+            sum += val;
+        });
+        console.log('sum :' + sum);
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            var arr = {
+            '0' : 2,
+            '1' : 6,
+            '2' : 10,
+            '3' : 11,
+            '4' : 22,
+            '5' : 1,
+            '6' : 7,
+            'length' : 7,
+            'reduce' : function(fn) {
+                var temp = this[0];
+                for (var i = 1; i < this.length; i++) {
+                   temp = fn(temp, this[i], i, this);
+               //           temp                   this[i]                i                this    
+               // callback함수의 반환값을 누적, 배열의 현재 요소, 배열의 현재 요소의 인덱스, 호출한 배열
+                }
+                return temp;
+            }
+        };
+        var sum = arr.reduce(function(pVal, cVal, idx, innerArr) {
+            return pVal + cVal;
+        });
+        console.log('sum : ' + sum);
+
+        var maxVal = arr.reduce(function(pVal, cVal) {
+            return pVal > cVal ? pVal : cVal;
+        });
+        console.log('maxVal : ' + maxVal);
+
+        var minVal = arr.reduce(function(pVal, cVal) {
+            return pVal < cVal ? pVal : cVal;
+        });
+        console.log('minVal : ' + minVal);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var h1 = {
+            'name' : '홍길동',
+            'age' : 12,
+            'showMe' : function() {
+                console.log('My nane is ' + this.name + ', age is ' + this.age);
+            }
+        };
+
+        var h2 = {
+            'name' : '가나다',
+            'age' : 14,
+            'showMe' : function() {
+                console.log('My nane is ' + this.name + ', age is ' + this.age);
+            }
+        };
+
+        h1.showMe();
+        h2.showMe();
+    </script>
+</body>
+</html>

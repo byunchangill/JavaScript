@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [2, 6, 10, 11, 22, 1, 7];
+        var sum = arr.reduce(function(pVal, cVal, idx, innerArr) {
+            return pVal + cVal;
+        });
+        console.log('sum : ' + sum);
+
+        var maxVal = arr.reduce(function(pVal, cVal) {
+            return pVal > cVal ? pVal : cVal;
+        });
+        console.log('maxVal : ' + maxVal);
+
+        var minVal = arr.reduce(function(pVal, cVal) {
+            return pVal < cVal ? pVal : cVal;
+        });
+        console.log('minVal : ' + minVal);
+    </script>
+</body>
+</html>

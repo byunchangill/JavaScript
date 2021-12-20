@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum (n1 = 1, n2 = 2, n3 = 3, n4 = 4) {
+            console.log(n1 + n2 + n3 + n4);
+        }
+        sum(); // 디폴트 값이 들어감.
+        sum(10); // 첫번째에 10 이 들어감. 나머진 디폴드값.
+        sum(10, 20); // 첫번째에 10 이, 두번째에 20이 들어감.
+        sum(10, 20, 30, 40, 50); // 변수 이상의 값이 들어가면 이상의 값은 쌩깜.
+        
+        function multi(n1 = null, n2 = 1, n3 = 2) {
+            console.log(n1 + n2 + n3); // null 은 0 으로 취급.
+        }
+        multi();
+    </script>
+</body>
+</html>

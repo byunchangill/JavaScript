@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // js, prototype 기반 객체지향.
+        // 보통 객체지향 언어는 class 기반.
+
+        function Human(name, age) {
+            this.name = name;
+            this.age = age;
+
+            this.showMe = function() {
+                console.log('My nane is ' + this.name + ', age is ' + this.age);
+            }
+        }
+
+        Human.prototype.hello = function() {
+            console.log('나는 ' + this.name + '이야 안녕~');
+        }
+
+        var h1 = new Human('홍길동', 12);
+        var h2 = new Human('가나다', 14);
+        h1.showMe();
+        h1.height = 100;
+        
+        h2.name = '우주선';
+
+        console.log(h1.height);
+        console.log(h2.height);
+        console.log(h2.name);
+        console.log(h2.age);
+
+        h1.hello();
+        h2.hello();
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            var 변수와 function 은 호이스팅 현상이 일어난다.
+            즉, 인접 스코프 {} 시작 지점으로 옮겨준다.
+
+            호이스팅 안되는 방법.
+            - 변수 선언은 최상위에 한다.
+            - 변수명, 함수명은 같은 이름으로 쓰지 않는다.
+        */
+        console.log(myName);
+        var myName = '홍길동';  // 변수만 위로 올라가고 값은 올라가지 않아서 undefined 뜬다.
+    </script>
+</body>
+</html>

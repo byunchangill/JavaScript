@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = 9;
+        var pro = new Promise (function(resolve, reject) { // promise 호출 부분.
+            if (num >= 10) {
+                console.log('-- resolve --');
+                var obj = {
+                    n1 : 10,
+                    n2 : 20
+                };
+                resolve(obj); // then에 주입된 함수 호출.
+            } else {
+                console.log('-- reject --');
+                reject(new Error('에러 발생')); // catch에 주입된 함수 호출.
+            }
+        });
+
+        pro.then(function(res, res2) { // promise 처리 부분.
+            console.log(' then called ');
+            console.log('res : ' + res);
+            console.log('n1 : ' + res.n1);
+            console.log('n1 : ' + res.n2);
+        }).catch(function(err) {
+            console.log(' catch called ');
+            console.log(err);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn1(item) {
+            console.log('fn1 : ' + item);
+        }
+
+        function fn2(item) {
+            console.log('fn2 : ' + item);
+        }
+        
+        function proc(cb, max) {
+            for(var i=0; i<max; i++) {
+                cb(i); 
+            }
+        }
+        proc(function(item) {
+            console.log('noName : ' + item);
+        }, 10);
+        
+
+    </script>
+</body>
+</html>

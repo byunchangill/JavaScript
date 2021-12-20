@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getData();">자료 가져오기</button>
+    <div id="container"></div>
+    <script>
+    function getData() {
+        var url = 'https://picsum.photos/v2/list';
+        fetch(url).then(function(res) {
+            return res.json();
+        }).then(function(data) {
+            setData(data);
+        }).catch(function(err) {
+            alert(err);
+        });
+    }    
+        
+    function setData(list) {
+            var containerElem = document.querySelector('#container');
+            var imgUrl = 'https://picsum.photos/id/';
+            list.forEach(function(item) {
+                var width = parseInt(item.width * 0.1);
+                var height = parseInt(item.height * 0.1);
+                var id = item.id;
+
+                var imgElem = document.createElement('img');
+                imgElem.src = imgUrl + id + '/' + width + '/' + height;
+
+                containerElem.append(imgElem);
+            });
+        }
+    </script>
+</body>
+</html>

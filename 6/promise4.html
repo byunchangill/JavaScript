@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> // promise 지옥 안빠지는 법.
+       function fn1() {
+           return new Promise(function(resolve, reject) {
+                setTimeout(function() {
+                    resolve(10);
+                }, 1000);
+           });
+       }
+/*
+       function fn2(val) {
+           return new Promise(function(resolve, reject) {
+               setTimeout(function() {
+                   resolve(val + 100);
+               }, 1000);
+           });
+       }
+*/
+
+       function fn2(val) {
+           return val + 100;
+       }
+       
+       function fn3(val) {
+        return val * 2;
+       }
+
+       fn1().then(function(val) {
+            return fn2(val);
+       }).then(function(val2) {
+            return fn3(val2);
+       }).then(function(val3) {
+            console.log('val3 : ' + val3);
+       });
+    </script>
+</body>
+</html>

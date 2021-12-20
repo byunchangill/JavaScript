@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function print(p1, p2, cb=hello) {
+            cb(p1, p2);
+        }
+
+        function hello(nm) {
+            console.log('Hi~~~ ' + nm);
+        }
+
+        function sayGoodbye(nm) {
+            console.log('Bye~~~~' + nm);
+        }
+
+        print('H', 'D', sayGoodbye);
+
+
+    </script>
+</body>
+</html>

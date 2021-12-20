@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn1() {
+            setTimeout(function() {
+                var val = 10;
+                fn2(val);
+            }, 1000);
+        }
+
+        function fn2(val) {
+            setTimeout(function() {
+                var val2 = val + 30;
+                fn3(val2);
+            }, 1000);
+        }
+
+        function fn3(val) {
+            setTimeout(function() {
+                console.log(val + 50);
+            }, 1000);
+        }
+        
+        fn1();
+
+    </script>
+</body>
+</html>
