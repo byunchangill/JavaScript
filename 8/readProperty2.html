@@ -16,16 +16,26 @@
     <script>
         var result = [];
         var fm = document.querySelector('#favorite');
-        var list = fm.children;
+        var list = fm.children; // children 은 favorite 안에 태그객체<> 에 있는 것을 가르킨다.
         console.log(list);
         for(var i = 0; i < list.length; i++) {
             if(list[i].nodeName === 'INPUT' && list[i].type === 'checkbox') {
-                result.push(list[i].getAttribute('value'));
+                result.push(list[i].getAttribute('value')); // getAttribute 은 value 값을 가진다.
                 //result.push(list[i].value);
             }
         }
         console.log(result.join(', '));
-     
-    </script>
+
+         function chk() {
+            var checkedList = [];
+            var checkboxList = fm.querySelectorAll('input[type = checkbox][name = dog]');
+            for(var i = 0; i < checkboxList.length; i++) {
+                if(checkboxList[i].checked) {
+                    checkedList.push(checkboxList[i].value);
+                }
+            }
+            console.log(checkedList.join(', '));
+        }    
+</script>
 </body>
 </html>

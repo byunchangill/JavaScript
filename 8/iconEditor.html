@@ -12,7 +12,7 @@
             var node = document.createElement(name);
             if(attr) {
                 for(var item in attr) { // 객체 일때는 맴버필드명, 배열일때는 값을 준다.
-                    if(attr.hasOwnProperty(item)) {
+                    if(attr.hasOwnProperty(item)) { // 배열이면 작동 안되게 하기 위해서 존재
                         node.setAttribute(item, attr[item]);
                     }
                 }
@@ -41,12 +41,14 @@
                 table.appendChild(tr);
 
                 for(var c = 0; c < nx; c++) {
-                    var td = elt('td');
+                    var td = elt('td'); // var 대신 const 를 쓰면 e.target 쓸 필요 없다. 
+                                        // var 는 호이스팅 되기때문에 const 는 호이스팅 안됨.
                     cells.push(td);
                     tr.appendChild(td);
                     td.style.width = td.style.height = '15px';
                     td.style.border = '1px solid gray';
                     td.addEventListener('click', function(e) {
+                        // td.style.backgroundColor = color.value; // const 를 쓰면 한줄로 끝.
                         if(e.target.style.backgroundColor === '') {
                             e.target.style.backgroundColor = color.value;
                         } else {
